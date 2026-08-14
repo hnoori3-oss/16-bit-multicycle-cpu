@@ -27,7 +27,7 @@ begin
 	process(clk, rst)
 	begin 
 		if (rst = '1') then 
-			count <= others => '0';
+			count <= (others => '0');
 		elsif (rising_edge(clk)) then
 			if (en = '1') then 
 				if (use_jump = '1') then
