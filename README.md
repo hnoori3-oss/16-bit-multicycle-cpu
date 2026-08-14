@@ -90,14 +90,14 @@ This state is used for Load. Since the RAM is synchronous the data needs an extr
 ## ALU:
 The 16 bit ALU supports 8 operations, and the ALU select values match with the lower three bits in their corresponding ALU opcodes.
 
-ALU select 000: AND
-ALU select 001: OR
-ALU select 010: NAND
-ALU select 011: NOR
-ALU select 100: XOR
-ALU select 101: MOV
-ALU select 110: ADD
-ALU select 111: SUB
+- ALU select 000: AND
+- ALU select 001: OR
+- ALU select 010: NAND
+- ALU select 011: NOR
+- ALU select 100: XOR
+- ALU select 101: MOV
+- ALU select 110: ADD
+- ALU select 111: SUB
 
 Zero flag(Z): is asserted when the result is zero
 Negative flag(N): is asserted when the results most significant bit(15) is 1 
@@ -105,28 +105,29 @@ Negative flag(N): is asserted when the results most significant bit(15) is 1
 ## Example program:
 The current program in the ROM is only used to test every instruction and check everything is working properly including:
 
-Arithmetic and logic operations
-Register-to-register movement
-Immediate loading
-Writing register data to RAM
-Loading RAM data back into a register
-Jumping to another instruction address
+- Arithmetic and logic operations
+- Register-to-register movement
+- Immediate loading
+- Writing register data to RAM
+- Loading RAM data back into a register
+- Jumping to another instruction address
 
 ## Source Files:
 all VHDL files are located under the folder named src
-cpu_top_level.vhd - "wires" all the components and control signals
-cpu_CU_ver2.vhd - Multicycle FSM control unit
-cpu_alu.vhd - arithmetic and logic unit
-cpu_register.vhd - Eight 16 bit Register file
-cpu_ram.vhd - synchronous ram unit
-PC_cpu.vhd - Program counter and jump logic
-ROM.vhd - Program instructions
+
+- **cpu_top_level.vhd** - "wires" all the components and control signals
+- **cpu_CU_ver2.vhd** - Multicycle FSM control unit
+- **cpu_alu.vhd** - arithmetic and logic unit
+- **cpu_register.vhd** - Eight 16 bit Register file
+- **cpu_ram.vhd** - synchronous ram unit
+- **PC_cpu.vhd** - Program counter and jump logic
+- **ROM.vhd** - Program instructions
 
 ## Tools and Tech:
-Basys 3 FPGA board
-Xilinx Vivado
-VHDL
-RTL
+- Basys 3 FPGA board
+- Xilinx Vivado
+- VHDL
+- RTL
 
 ## What I learned: 
 
