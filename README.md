@@ -134,5 +134,5 @@ all VHDL files are located under the folder named src
 This project taught me the architecture of a processor, data-path design, instruction encoding, Multicycle control unit, synchronous memory, register file design, ALU design, and how to use a shared clock across multiple components
 
 ## Demo video: 
-the demo video shows the CPU running on the Basys 3 FPGA board. The 16 LEDs each represent a bit.
+the demo video shows the CPU running on the Basys 3 FPGA board. The 16 LEDs each represent a bit of the output.
 
