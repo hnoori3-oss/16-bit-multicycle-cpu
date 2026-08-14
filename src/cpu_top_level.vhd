@@ -7,8 +7,8 @@ port (
 		clk_in : in std_logic;
 		rst_in : in std_logic;
 		
-		cpu_out : out std_logic_vector(15 downto 0);
-		Neg, Zero : out std_logic
+		cpu_out : out std_logic_vector(15 downto 0)
+		
 	);
 end cpu_top_level;
 
@@ -98,6 +98,9 @@ signal sig_ir_write : std_logic;
 signal slow_ir : std_logic;
 
 signal R : std_logic_vector(15 downto 0);
+signal Neg : std_logic;
+signal Zero : std_logic;
+signal display_result : std_logic_vector(15 downto 0); 
 
 signal Data_A, Data_B, alu_B_input : std_logic_vector(15 downto 0);
 signal imm16 : std_logic_vector(15 downto 0);
@@ -145,6 +148,17 @@ elsif(rising_edge(clk_in)) then
 	end if; 
 end if;
 end process;
+
+Display_REG : process(clk_in, rst_in)
+begin
+if (rst_in = '1') then 
+    display_result <= (others => '0');
+elsif (rising_edge(clk_in)) then 
+    if (slow_write_en = '1') then 
+        display_result <= sig_write_data;
+    end if;
+end if;
+end process;
 	
 	
 
@@ -160,7 +174,7 @@ alu_B_input <= imm16 when use_immediate_sig = '1' else Data_B;
 
 sig_write_data <= sig_ram_data_out when sig_use_r_to_reg = '1' else R;
 
-cpu_out <= sig_write_data;
+cpu_out <= display_result;
 
 slow_write_en <= reg_en_write and clock_en;
 slow_ram_write <= write_en_ram and clock_en;
