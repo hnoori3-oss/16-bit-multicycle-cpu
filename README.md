@@ -135,4 +135,4 @@ This project taught me the architecture of a processor, data-path design, instru
 
 ## Demo video: 
 the demo video shows the CPU running on the Basys 3 FPGA board. The 16 LEDs each represent a bit of the output.
-
+[Watch the FPGA demo](demo/cpu_fpga_demo.mp4)
