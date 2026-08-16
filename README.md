@@ -1,6 +1,6 @@
 # 16 bit multicycle CPU
 
-A custom ISA 16 bit CPU designed in VHDL and implemented for FPGA hardware using Xilinx Vivado. The processor uses a custom ISA and a Harvard architecture.
+A custom ISA 16 bit CPU designed in VHDL and implemented for FPGA hardware using Xilinx Vivado. The processor uses a custom ISA and a Harvard architecture. 
 
 This project was built to explore and understand processor architecture, data-path design, FSMs, and memory interfacing. 
 
@@ -133,4 +133,6 @@ all VHDL files are located under the folder named src
 
 This project taught me the architecture of a processor, data-path design, instruction encoding, Multicycle control unit, synchronous memory, register file design, ALU design, and how to use a shared clock across multiple components
 
+## Demo video: 
+the demo video shows the CPU running on the Basys 3 FPGA board. The 16 LEDs each represent a bit of the output.
 
